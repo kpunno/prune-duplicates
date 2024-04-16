@@ -1778,6 +1778,7 @@ OBJS = \
 	tree-tailcall.o \
 	tree-vect-generic.o \
 	gimple-isel.o \
+	prune-duplicates.o \
 	tree-vect-patterns.o \
 	tree-vect-data-refs.o \
 	tree-vect-stmts.o \
@@ -1810,7 +1811,6 @@ OBJS = \
 	web.o \
 	wide-int.o \
 	wide-int-print.o \
-	prune-duplicates.o \
 	$(out_object_file) \
 	$(ANALYZER_OBJS) \
 	$(EXTRA_OBJS) \
@@ -2847,6 +2847,7 @@ GTFILES = $(CPPLIB_H) $(srcdir)/input.h $(srcdir)/coretypes.h \
   $(srcdir)/btfout.cc \
   $(srcdir)/tree-vect-generic.cc \
   $(srcdir)/gimple-isel.cc \
+  $(srcdir)/prune-duplicates.cc \
   $(srcdir)/dojump.cc $(srcdir)/emit-rtl.h \
   $(srcdir)/emit-rtl.cc $(srcdir)/except.h $(srcdir)/explow.cc $(srcdir)/expr.cc \
   $(srcdir)/expr.h \
@@ -2897,7 +2898,6 @@ GTFILES = $(CPPLIB_H) $(srcdir)/input.h $(srcdir)/coretypes.h \
   $(srcdir)/calls.cc \
   $(srcdir)/omp-general.h \
   $(srcdir)/analyzer/analyzer-language.cc \
-  $(srcdir)/prune-duplicates.cc \
   @all_gtfiles@
 
 # Compute the list of GT header files from the corresponding C sources,

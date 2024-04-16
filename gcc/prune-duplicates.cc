@@ -31,8 +31,8 @@ const pass_data pass_data_prune_duplicates =
     "prune_duplicates", // name
     OPTGROUP_NONE,      // optinfo _flags
     TV_NONE,            // tv_id
-    PROP_cfg,           // properties_required 
-    PROP_gimple_lva,    // properties_provided
+    0,                  // properties_required 
+    0,                  // properties_provided
     0,                  // properties_destroyed
     0,                  // todo flags start
     0
@@ -52,6 +52,9 @@ public:
 unsigned int
 pass_prune_duplicates::execute(function *fun) 
 {
+    if (fun) {
+        ;
+    }
     return 0;
 }
 
