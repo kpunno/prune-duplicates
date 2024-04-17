@@ -20,7 +20,28 @@
 #include "optabs.h"
 #include "gimple-fold.h"
 #include "internal-fn.h"
+#include "cgraph.h"
 
+// Instantiate call graph
+    // struct cgraph_node *node;
+
+    // For each function
+    // FOR_EACH_FUNCTION (node)
+        // Declare vector of functions to be pruned
+
+        // Get "default" version from cgraph_version_info
+        // Get hash value of final adjustment
+        // While (version_info.next)
+            // Get hash value of final adjustment of this node
+            // Compare to default hash value
+            // IF (same)
+                // Prune()
+
+static unsigned int 
+prune_duplicate_clones() 
+{
+    return 0;
+}
 
 namespace 
 {
@@ -45,20 +66,14 @@ public:
         : gimple_opt_pass (pass_data_prune_duplicates, ctxt)
     {}
 
-    unsigned int execute (function *fun) final override;
+    unsigned int execute (function *) final override
+    {
+        return prune_duplicate_clones();
+    }
 
 }; // class pass_prune_duplicates
 
-unsigned int
-pass_prune_duplicates::execute(function *fun) 
-{
-    if (fun) {
-        ;
-    }
-    return 0;
-}
-
-}
+} // anon namespace
 
 gimple_opt_pass *make_pass_prune_duplicates (gcc::context *ctxt)
 {
